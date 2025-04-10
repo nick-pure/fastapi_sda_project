@@ -1,8 +1,3 @@
-""" Это модуль с фикстурами для пайтеста.
-Фикстуры - это особые функции, которые не надо импортировать явно.
-Сам пайтест подтягивает их по имени из файла conftest.py
-"""
-
 import asyncio
 
 import httpx
@@ -11,9 +6,9 @@ import pytest_asyncio
 from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 
 from src.configurations.settings import settings
-from src.models import books  # noqa
+from src.models import books
 from src.models.base import BaseModel
-from src.models.books import Book  # noqa F401
+from src.models.books import Book  
 
 async_test_engine = create_async_engine(
     settings.database_test_url,
