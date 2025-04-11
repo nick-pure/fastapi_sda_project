@@ -19,4 +19,3 @@ class Book(BaseModel):
     pages: Mapped[int]
     seller_id: Mapped[int] = mapped_column(ForeignKey("sellers_table.id", ondelete="CASCADE"))
     seller: Mapped["Seller"] = relationship(back_populates="books")
-    

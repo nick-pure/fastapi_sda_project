@@ -9,6 +9,7 @@ class BaseBook(BaseModel):
     author: str
     year: int
 
+
 class IncomingBook(BaseBook):
     seller_id: int
     pages: int = Field(

@@ -26,7 +26,6 @@ def event_loop():
     yield loop
     loop.close()
 
-
 @pytest_asyncio.fixture(scope="session", autouse=True)
 async def create_tables() -> None:
     async with async_test_engine.begin() as connection:
