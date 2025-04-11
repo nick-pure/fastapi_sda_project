@@ -7,6 +7,13 @@ def make_returned(book: dict):
     formatted_book.pop('count_pages')
     return formatted_book
 
+def make_incoming(book: dict):
+    # translate pages to count_pages
+    formatted_book = book.copy()
+    formatted_book['count_pages'] = formatted_book['pages']
+    formatted_book.pop('pages')
+    return formatted_book
+
 seller1 = {
     "first_name": "Bob",
     "last_name": "Johnson",

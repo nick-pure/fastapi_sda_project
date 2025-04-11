@@ -1,11 +1,9 @@
 import pytest
 from sqlalchemy import select
 from src.models.books import Book
+from src.models.sellers import Seller
 from fastapi import status
 from icecream import ic
-
-from src.models.sellers import Seller
-
 from .data import *
 
 @pytest.mark.asyncio
@@ -23,7 +21,7 @@ async def test_create_book(db_session, async_client):
     result_data = response.json()
 
     resp_book_id = result_data.pop("id", None)
-    assert resp_book_id, "Book id not returned from endpoint"
+    assert resp_book_id, "The book id was not returned from the endpoint"
 
     right_result_data = make_returned(book)
 
