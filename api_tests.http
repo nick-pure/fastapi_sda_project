@@ -1,38 +1,35 @@
-# Набор тестов для эндпоинтов которые можно запустить
-# в VSCode с помощью плагина  REST Client
-# Найти можно по идентификатору: humao.rest-client
-# Tunder Client не позволяет свободно импортировать-экспортировать записи,
-# поэтому перешел на этот плагин. Он тоже хорош :-)
+# To run the tests you can use REST Client extension
 
-# Создаем книгу
+# Create a book
 POST http://localhost:8000/api/v1/books/ HTTP/1.1
 Content-Type: application/json
 
 {
     "title": "Clean Architecture",
-    "author": " Robert Martin",
+    "author": "Robert Martin",
     "count_pages": 300,
-    "year": 2025
+    "year": 2025,
+    "seller_id": 2
 }
 
 ###
 
-# Получаем список книг
+# Get the list of all books
 GET http://localhost:8000/api/v1/books/ HTTP/1.1
 
 ###
 
-# Получаем одну книгу по ее ИД
-GET http://localhost:8000/api/v1/books/1 HTTP/1.1
+# Get the book by its ID
+GET http://localhost:8000/api/v1/books/2 HTTP/1.1
 
 ###
 
-# Удаляем книгу
+# Delete a book
 DELETE http://localhost:8000/api/v1/books/1 HTTP/1.1
 
 ###
 
-# Обновляем поля в данных о книге
+# Update fields of the book by its ID
 PUT http://localhost:8000/api/v1/books/1 HTTP/1.1
 Content-Type: application/json
 
@@ -43,5 +40,41 @@ Content-Type: application/json
     "year": 2022,
     "pages": 310
 }
+
+###
+
+POST http://localhost:8000/api/v1/seller HTTP/1.1
+Content-Type: application/json
+
+{
+    "first_name": "Bob",
+    "last_name": "Jonson",
+    "e_mail": "bobjonson@gmail.com",
+    "password": "Apple_21"
+}
+
+###
+
+GET http://localhost:8000/api/v1/seller HTTP/1.1
+
+###
+
+GET http://localhost:8000/api/v1/seller/1 HTTP/1.1
+
+###
+
+PUT http://localhost:8000/api/v1/seller/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "first_name": "Robbert",
+    "last_name": "Jonson",
+    "e_mail": "robbertjonson@gmail.com"
+}
+
+###
+
+DELETE http://localhost:8000/api/v1/seller/1 HTTP/1.1
 
 ###

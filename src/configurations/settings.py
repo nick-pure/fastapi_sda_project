@@ -2,7 +2,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    # for PostgreSQL
+    # PostgreSQL
     db_host: str
     db_name: str
     db_username: str

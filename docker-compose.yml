@@ -11,11 +11,11 @@ services:
       - POSTGRES_PASSWORD=postgres_pass
     volumes:
       - ./postgres_data:/var/lib/postgresql/data
-    networks: [fastapi_project_shad]
+    networks: [fastapi_sda_project]
 
 volumes:
   postgres_data:
 
 networks:
-  fastapi_project_shad:
-    name: fastapi_project_shad
+  fastapi_sda_project:
+    name: fastapi_sda_project
